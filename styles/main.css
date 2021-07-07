@@ -1,0 +1,583 @@
+/*
+  =========================================
+
+  Project Name: Loopstudios
+  Creation date: 29 June 2021
+  Last modified: 1 July 2021
+  Description: a stylesheet for responsive, mobile-friendly Loopstudios landing page.
+  Version: 1.0
+  Author: Shaher Ashraf | shaherashraf77@gmail.com
+  Project URI: http: //www.name.com
+
+  ===========[TABLE OF CONTENTS]===========
+
+  1. BASE
+  -1.1. Fonts & CSS Reset [RES]
+  -1.2. Global Settings [GLO]
+  -1.3. Common Formatting [COM]
+  -1.4. Links [LIN]
+  -----
+  2. CONTENT
+  -2.1. Wrapper [WRA]
+  -2.2. Header [HEA]
+  -2.3. Content [CON]
+  -2.4. Footer [FOO]
+  -2.5. Classes [CLA]
+  -2.6. Media Queries [MED]
+  =========================================
+*/
+
+/* =============== [RES]= Fonts & CSS Reset =============== */
+/* fonts */
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Josefin+Sans:wght@300&display=swap');
+/* css reset */
+@import url(normalize.css);
+
+*,
+::after,
+::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =============== [GLO]= Global Settings =============== */
+:root {
+  /* || Colors */
+  --White: hsl(0, 0%, 100%);
+  --Black: hsl(0, 0%, 0%);
+  --DarkGray: hsl(0, 0%, 55%);
+  --VeryDarkGray: hsl(0, 0%, 41%);
+
+  /* || Typography */
+  --h1-fs: 4rem;
+  --h2-fs: 3rem;
+
+  /* || Spacing */
+  /* Paddings */
+  --py-section: 4rem 0;
+
+  /* || Fonts */
+  --headings-font: 'Alata', sans-serif;
+  --body-font: 'Josefin Sans', sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: var(--body-font);
+  color: var(--Black);
+}
+
+/* =============== [COM]= Common Formatting =============== */
+h1,
+h2,
+h3 {
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--h1-fs);
+}
+
+h2 {
+  font-size: var(--h2-fs);
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* =============== [LIN]= Links =============== */
+a {
+  color: var(--White);
+  font-family: var(--body-font);
+}
+
+/* mobile menu links */
+.mobile-menu a {
+  font-size: 2.4rem;
+  text-transform: uppercase;
+}
+
+.mobile-menu a:hover {
+  color: var(--DarkGray);
+}
+
+/* footer links */
+.footer a {
+  position: relative;
+}
+
+.footer .nav-list a {
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 1.6rem;
+}
+
+.footer li:hover a::before {
+  content: '';
+  position: absolute;
+  left: 12.5%;
+  bottom: -0.5rem;
+  width: 75%;
+  border-top: 2px solid var(--White);
+}
+
+.attribution a:hover {
+  text-decoration: underline;
+}
+
+/* =============== [WRA]= Wrapper =============== */
+.wrapper {
+  width: 85%;
+  margin: 0 auto;
+}
+
+/* =============== [HEA]= Header =============== */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.logo img {
+  width: 80%;
+}
+
+.menu-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  background-size: 100% 100%;
+  background-position: center;
+}
+
+.close-icon {
+  background: url(/images/icon-close.svg) no-repeat;
+}
+
+.open-icon {
+  background: url(/images/icon-hamburger.svg) no-repeat;
+}
+
+/* =============== [CON]= Content =============== */
+section,
+.hero__overlay {
+  min-height: 100vh;
+  padding: var(--py-section);
+}
+
+/* || MOBILE MENU */
+.mobile-menu {
+  background: var(--Black);
+  display: none;
+}
+
+.main-nav {
+  margin: 12rem auto;
+}
+
+.nav-list li {
+  margin: 2rem auto;
+}
+
+/* || HERO SECTION */
+.hero {
+  color: var(--White);
+  background: url(/images/mobile/image-hero.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero .desktop-nav {
+  display: none;
+}
+
+.hero__headline {
+  margin: 15.5rem auto 0;
+  padding: 2rem;
+  border: 2px solid var(--White);
+  line-height: 1;
+  font-size: clamp(3rem, 11vw, 7rem);
+  max-width: 55rem;
+}
+
+/* || ABOUT SECTION */
+.about__img {
+  margin-top: 6rem;
+}
+
+.about__content {
+  text-align: center;
+}
+
+.about__content__heading {
+  margin-top: 4rem;
+}
+
+.about__content__desc {
+  margin-top: 1rem;
+  font-family: var(--headings-font);
+  color: var(--DarkGray);
+  line-height: 1.5;
+}
+
+/* || PRODUCTS SECTION */
+.products {
+  text-align: center;
+  padding-bottom: 8rem;
+}
+
+.products__header .btn {
+  display: none;
+}
+
+.card-list {
+  margin-top: 4rem;
+}
+
+.card {
+  position: relative;
+  margin-top: 2.5rem;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card:last-child {
+  margin-bottom: 3rem;
+}
+
+.card__title {
+  width: 45%;
+  max-width: 14.8rem;
+  font-size: 2.4rem;
+  text-align: left;
+  position: relative;
+  left: 5%;
+  top: 40%;
+}
+
+.card__overlay:hover {
+  color: var(--Black);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+/* =============== [FOO]= Footer =============== */
+.footer {
+  padding: var(--py-section);
+  background: var(--Black);
+  text-align: center;
+}
+
+.footer .logo {
+  width: 70%;
+  margin: 2rem auto 0;
+}
+
+.footer .main-nav {
+  margin: 5rem auto;
+}
+
+.social-icons {
+  width: 50%;
+  max-width: 16rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.copyright {
+  color: var(--VeryDarkGray);
+  font-family: var(--headings-font);
+  font-size: 1.5rem;
+  margin-top: 2rem;
+}
+
+.attribution p {
+  color: var(--DarkGray);
+  margin-top: 2rem;
+  line-height: 1.5;
+}
+
+.attribution-desktop {
+  display: none;
+}
+
+/* =============== [CLA]= Classes =============== */
+.btn {
+  font-family: var(--headings-font);
+  border: 2px solid var(--Black);
+  padding: 1rem 6rem;
+  color: var(--Black);
+}
+
+.btn:hover {
+  color: var(--White);
+  background: var(--Black);
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+::selection {
+  color: var(--White);
+  background: #b95dca;
+}
+
+/* =============== [MED]= Media Queries =============== */
+/* || Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .hero__headline {
+    margin: 4rem auto 0;
+    width: 100%;
+    font-size: clamp(4rem, 8vw, 8rem);
+  }
+}
+
+/* || Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .hero {
+    background-image: url(/images/desktop/image-hero.jpg);
+    background-position: center;
+  }
+
+  .hero__headline {
+    margin: 10rem auto 0;
+    font-size: clamp(3rem, 11vw, 7rem);
+  }
+
+  .about__img {
+    width: 75%;
+    margin: auto;
+  }
+
+  .about__content {
+    width: 70%;
+    margin: auto;
+  }
+
+  .about__content__heading {
+    width: 80%;
+    margin: 4rem auto 0;
+  }
+
+  .card {
+    width: 80%;
+    margin: 2.5rem auto;
+  }
+}
+
+/* || Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) {
+  .menu-icon {
+    display: none;
+  }
+
+  .hero .desktop-nav {
+    display: block;
+    width: 45%;
+  }
+
+  .desktop-nav-list {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+
+  .desktop-nav-list a {
+    position: relative;
+  }
+
+  .desktop-nav-list li:hover a::before {
+    content: '';
+    position: absolute;
+    left: 25%;
+    bottom: -0.5rem;
+    width: 50%;
+    border-top: 3px solid var(--White);
+  }
+
+  .hero__headline {
+    margin: 12rem 0 auto;
+    max-width: 70%;
+    padding: 3rem;
+    font-size: clamp(3rem, 12vw, 8rem);
+  }
+
+  .products__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 5rem;
+  }
+
+  .products__header .btn {
+    display: inline-block;
+  }
+
+  .card-list {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+
+  .card {
+    width: calc(100% / 4 - 2rem);
+  }
+
+  .card:last-child {
+    margin-bottom: 2.5rem;
+  }
+
+  .card__title {
+    width: 100%;
+    max-width: 15.8rem;
+    font-size: 3rem;
+    left: 15%;
+    top: 77.5%;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+/* || Medium devices (landscape tablets, 1024px and up) */
+@media (min-width: 1024px) {
+  .hero__headline {
+    max-width: 65%;
+  }
+}
+
+/* || X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .about {
+    padding-top: 8rem;
+  }
+
+  .about .wrapper {
+    width: 80%;
+  }
+
+  .about__img {
+    width: 55%;
+    margin-left: 0;
+  }
+
+  .about__content {
+    width: 65%;
+    padding: 6rem;
+    background: var(--White);
+    float: right;
+    position: relative;
+    top: -25rem;
+    left: 8rem;
+  }
+
+  .about__content__heading {
+    margin-top: 0;
+    text-align: left;
+    font-size: 4rem;
+    width: 76%;
+  }
+
+  .about__content p {
+    font-size: 1.6rem;
+    text-align: left;
+    width: 75%;
+  }
+
+  .footer .wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .links,
+  .attribution,
+  .social {
+    width: calc(100% / 3 - 6rem);
+  }
+
+  .footer .links {
+    text-align: left;
+    align-items: flex-start;
+  }
+
+  .links .logo {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  .main-nav {
+    display: inline;
+  }
+
+  .footer .nav-list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .footer .nav-list a {
+    font-size: 1.6rem;
+  }
+
+  .footer .nav-list li {
+    margin: 0;
+  }
+
+  .footer .social {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: right;
+  }
+
+  .social-icons {
+    margin-right: 0;
+  }
+
+  .social p {
+    font-size: 1.5rem;
+  }
+
+  .social .attribution {
+    display: none;
+  }
+
+  .attribution p {
+    margin-top: 0;
+  }
+
+  .attribution-desktop {
+    display: block;
+  }
+}
