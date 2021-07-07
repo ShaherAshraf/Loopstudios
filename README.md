@@ -7,7 +7,6 @@ This is a solution to the [Loopstudios landing page challenge on Frontend Mentor
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
-  - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
 
@@ -23,10 +22,6 @@ Users should be able to:
 ### Screenshot
 
 ![](./Screenshot-Loopstudios.png)
-
-### Links
-
-- Solution URL: [loopstudios](https://loopstudioz.netlify.app/)
 
 ## My process
 
